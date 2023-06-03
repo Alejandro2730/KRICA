@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="layouts/plantilla :: cabecera"></head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar2" th:replace="layouts/plantilla :: barraIzquierda"></aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container2">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop2" th:replace="layouts/plantilla :: cabeceraOpciones"></header>
+            <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none"
+                th:replace="layouts/plantilla :: barraDerecha"></aside>
+            <!-- END HEADER DESKTOP-->
+            <!-- BREADCRUMB-->
+            <section class="au-breadcrumb m-t-75">
+                <div class="section_content section_content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="au-breadcrumb-content">
+                                    <div class="au-breadcrumb-left">
+                                        <span class="au-breadcrumb-span">Estas aqui:</span>
+                                        <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                            <li class="list-inline-item active">
+                                                Tablas
+                                            </li>
+                                            <li class="list-inline-item seprate">
+                                                <span>/</span>
+                                            </li>
+                                            <li class="list-inline-item">Trabajadores</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END BREADCRUMB-->
+            <!-- STATISTIC-->
+            <!-- END STATISTIC-->
+            <section>
+                <div class="section_content section_content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <!-- RECENT REPORT 2-->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong><span th:text="${titulo}"></span></strong>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <form th:action="@{/trabajadores/guardar}" th:object="${trabajador}" method="post"
+                                            class="form-horizontal">
+                                            <input type="hidden" th:field="*{id}" />
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class="form-control-label">Nombre:</label>
+                                                </div>
+                                                <div class="col-12 col-md-5">
+                                                    <input th:field="*{nombre}" type="text" class="form-control"
+                                                        placeholder="Ingrese el nombre">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">Apellido:</label>
+                                                </div>
+                                                <div class="col-12 col-md-5">
+                                                    <input th:field="*{apellido}" type="text" class="form-control"
+                                                        placeholder="Ingrese el apellido">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">Correo:</label>
+                                                </div>
+                                                <div class="col-12 col-md-5">
+                                                    <input th:field="*{correo}" type="text" class="form-control"
+                                                        placeholder="Ingrese el correo">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">Cargo:</label>
+                                                </div>
+                                                <div class="col-12 col-md-5">
+                                                    <input th:field="*{cargo}" type="text" class="form-control"
+                                                        placeholder="Ingrese el cargo">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">Fecha de Registro:</label>
+                                                </div>
+                                                <div class="col-12 col-md-5">
+                                                    <input th:field="*{registro}" class="form-control" type="date"
+                                                        name="bday" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                <button type="submit" class="btn btn-warning">
+                                                    <i class="fa fa-dot-circle-o"></i> Registrar
+                                                </button>
+                                                <button type="reset" class="btn btn-danger btn-sm"
+                                                    onclick="limpiarForm();">
+                                                    <i class="fa fa-ban"></i> Limpiar
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- END RECENT REPORT 2-->
+                            </div>
+                            <div class="col-xl-4">
+                                <!-- TASK PROGRESS-->
+                                <!-- END TASK PROGRESS-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="section_content section_content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <!-- USER DATA-->
+                                <div class="table-responsive table-responsive-data2">
+                                    <table class="table table-data2">
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Apellidos</th>
+                                                <th>Correo</th>
+                                                <th>Cargo</th>
+                                                <th>Fecha Registro</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="item: ${listaTrabajadores}" class="tr-shadow">
+                                                <td th:text="${item.nombre}"></td>
+                                                <td th:text="${item.apellido}"></td>
+                                                <td th:text="${item.correo}"></td>
+                                                <td th:text="${item.cargo}"></td>
+                                                <td th:text="${item.registro}"></td>
+                                                <td>
+                                                    <div class="content-center table-data-feature">
+                                                        <a th:href="@{/trabajadores/mostrarEditar/} + ${item.id}"
+                                                            class="item" data-toggle="tooltip" data-placement="top"
+                                                            title="Editar">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </a>
+                                                        <a th:href="@{/trabajadores/eliminar/} + ${item.id}" class="item"
+                                                            data-toggle="tooltip" data-placement="top" title="Eliminar"
+                                                            th:onclick="'showConfirmation(event, ' + ${item.id} + ')'">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END USER DATA-->
+                            </div>
+                            <div class="col-xl-6">
+                                <!-- MAP DATA-->
+                                <!-- END MAP DATA-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section th:replace="layouts/plantilla :: footer"></section>
+            <!-- END PAGE CONTAINER-->
+        </div>
+    </div>
+    <div th:replace="layouts/plantilla :: librerias"></div>
+    <script th:src="@{/js/libreriaClientes.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+</body>
+
+</html>
+<!-- end document-->
