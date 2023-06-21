@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Krica Cell</title>
+  <link rel="icon" type="image/x-icon" th:href="@{assets/logoJutmay.ico}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <link th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container px-4">
+        <a class="navbar-brand fw-bolder"><img th:src="@{/assets/LOGO-OFICIAL-JUTMAY.svg}"></img> Krica Cell</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link text-white" href="#specialties">SERVICIOS Y PRODUCTOS</a></li>
+            <li class="nav-item"><a class="nav-link text-white" th:href="@{/CATALOGO}">CATALOGO</a></li>
+            <li class="nav-item"><a class="nav-link text-white" th:href="@{/login}">LOGIN <i class="fa-solid fa-right-to-bracket"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="bg-dark py-5">
+      <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center">
+          <div class="col-lg-8 col-xl-7 col-xxl-6">
+            <div class="my-5 text-center text-xl-start">
+              <h1 class="titulo display-5 fw-bolder text-white mb-2">
+                <p>Especialistas en</p>
+                <span class="typed"></span>
+              </h1>
+              <div class="titulo display-5 fw-bolder text-white mb-2" id="cadenas-texto">
+                <p><i class="servicios">Servicios Técnicos</i></p>
+                <p><i class="servicios">Mantenimientos</i></p>
+                <p><i class="servicios">Cargadores</i></p>
+                <p><i class="servicios">Audifonos</i></p>
+                <p><i class="servicios">Accesorios</i></p>
+                <p><i class="servicios">Desbloqueos</i></p>
+                <p><i class="servicios">Micas Protectoras</i></p>
+              </div>
+              <p class="lead fw-normal text-white-50 mb-4 d-xl-block">Siempre realizando un buen trabajo.</p>
+            </div>
+          </div>
+          <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5"
+              th:src="@{/assets/ImagenInicialJutmay.png}" height="300px" alt="..." /></div>
+        </div>
+      </div>
+    </header>
+    <section class="py-5" id="features">
+      <div class="container px-5 my-5">
+        <div class="row gx-5">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <div class="row gx-5 row-cols-1 row-cols-md-3">
+              <div class="col mb-5 h-100">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i>
+                </div>
+                <h2 class="h5">NOSOTROS</h2>
+                <p class="mb-0">Nuestra experiencia se ve reflejada en óptimos resultados.</p>
+              </div>
+              <div class="col mb-5 h-100">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i>
+                </div>
+                <h2 class="h5">OBJETIVO</h2>
+                <p class="mb-0">Ser la mejor opción en obtener la solución a tu problema técnico.</p>
+              </div>
+              <div class="col mb-5 mb-md-0 h-100">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i>
+                </div>
+                <h2 class="h5">SERVICIOS</h2>
+                <p class="mb-0">Nuestra responsabilidad es comprometernos en nuestro trabajo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--MAPS-->
+    <div class="py-5 bg-light justify-content-center">
+      <div class="container">
+        <div class="row gx-5 justify-content-center">
+          <div class="col-lg-10 col-xl-7">
+            <div class="text-center">
+              <h2 class="fw-bolder mb-0">NOS ENCONTRAMOS AQUÍ
+
+              </h2>
+            </div>
+          </div>
+          <div class="row gx-5 justify-content-center">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.6824522887215!2d-78.5143802303985!3d-7.157204668897786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91b25afbeba8590d%3A0x57530f9954e15946!2sJr.%20Jos%C3%A9%20Sabogal%201035%2C%20Cajamarca%2006002!5e0!3m2!1ses-419!2spe!4v1681488268906!5m2!1ses-419!2spe"
+              width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonial section-->
+    <div class="py-5 bg-light">
+      <div class="container px-5 my-5">
+        <div class="row gx-5 justify-content-center">
+          <div class="col-lg-10 col-xl-7">
+            <div class="text-center">
+              <div>
+                <h2 class="fw-bolder mb-0"><em>TRABAJO BIEN HECHO ES NUESTRA <span style="color: rgb(0, 47, 255);">
+                      <br>GARANTÍA Y CONFIANZA.</span></em></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Blog preview section-->
+    <section class="py-5" id="specialties">
+      <div class="container px-5 my-5">
+        <div class="row gx-5 justify-content-center">
+          <div class="col-lg-8 col-xl-6">
+            <div class="text-center">
+              <h2 class="fw-bolder">NUESTROS SERVICIOS Y PRODUCTOS</h2>
+              <p class="lead fw-normal text-muted mb-5"></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-5">
+            <div class="card h-100 shadow border-0">
+              <img class="card-img-top" th:src="@{/assets/especialidadesImg/image.jpg}" alt="..." />
+              <div class="card-body p-4">
+                <div class="badge bg-primary bg-gradient rounded-pill mb-2">Productos</div>
+                <a class="text-decoration-none link-dark" href="#!">
+                  <h6 class="card-title mb-3">ACCESORIOS</h6>
+                </a>
+                <p class="card-text mb-0">
+                <ul class="text-muted small">
+                  <li>Audifonos.</li>
+                  <li>Pop up.</li>
+                  <li>Aro de luz.</li>
+                  <li>Anillos. </li>
+                  <li>Fundas. </li>
+                  <li>Estuche. </li>
+                </ul>
+                </p>
+              </div>
+
+
+              <!-- Correccion (añadir controlador)-->
+              <a class="btn btn-primary btn-lg px-3  titulo display-5 fw-bolder text-white" th:href="@{/ACCESORIOS}">
+
+
+
+                <nav class="fa-solid fa-lightbulb"></nav> Más Información
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-5">
+            <div class="card h-100 shadow border-0">
+              <img class="card-img-top" th:src="@{/assets/especialidadesImg/image2.png}" alt="..." />
+              <div class="card-body p-4">
+                <div class="badge bg-primary bg-gradient rounded-pill mb-2">Productos</div>
+                <a class="text-decoration-none link-dark" href="#!">
+                  <h6 class="card-title mb-3">PROTECCION</h6>
+                </a>
+                <p class="card-text mb-0">
+                <ul class="text-muted small">
+                  <li>Micas de vidrio</li>
+                  <li>Micas anti espia</li>
+                  <li>Fundas protectoras.</li>
+                  <li>Micas hidrogel.</li>
+                </ul>
+                </p>
+              </div>
+
+              <!-- Correccion-->
+              <a class="btn btn-primary btn-lg px-3 titulo display-5 fw-bolder text-white" th:href="@{/PROTECCION}">
+
+
+                <nav class="fa-solid fa-lightbulb"></nav> Más Información
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-5">
+            <div class="card h-100 shadow border-0">
+              <img class="card-img-top" th:src="@{/assets/especialidadesImg/image3.jpg}" alt="..." />
+              <div class="card-body p-4">
+                <div class="badge bg-primary bg-gradient rounded-pill mb-2">Servicio</div>
+                <a class="text-decoration-none link-dark" href="#!">
+                  <h6 class="card-title mb-3">SERVICIO TECNICO</h6>
+                </a>
+                <p class="card-text mb-0">
+                <ul class="text-muted small">
+                  <li>Reparación de pantallas.</li>
+                  <li>Cambio de bateria.</li>
+                  <li>Cambio de glass.</li>
+                  <li>Reparación de placas.</li>
+                  <li>Reparación de celulares mojados.</li>
+                </ul>
+                </p>
+              </div>
+              <!-- Correccion-->
+              <a class="btn btn-primary btn-lg px-3 titulo display-5 fw-bolder text-white"
+                th:href="@{/SERVICIO_TECNICO}">
+                <nav class="fa-solid fa-lightbulb"></nav> Más Información
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-----SLIDE------>
+    <div class="text-center">
+      <h2 class="fw-bolder">NUESTROS PRODUCTOS</h2>
+    </div>
+    <div class="container px-8 px-lg-2">
+      <div class="conta">
+        <div class="slides">
+          <div class="slide">
+            <img th:src="@{/img/1.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/2.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/3.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/4.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/5.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/6.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/7.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/8.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/9.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/10.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/11.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/12.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/13.png}" alt="Image">
+          </div>
+          <div class="slide">
+            <img th:src="@{/img/14.png}" alt="Image">
+          </div>
+        </div>
+        <div class="slide-controls">
+          <button id="prev-btn">
+            <i class="fas fa-chevron-left" style="color: blue;"></i>
+          </button>
+          <button id="next-btn">
+            <i class="fas fa-chevron-right" style="color: blue;"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!----->
+    <section class="py-5" id="landing">
+      <div class="container px-5">
+        <!----modal-------->
+        <input type="checkbox" id="cerrar">
+        <div class="overlay" id="overlay">
+          <div class="popup" id="popup">
+            <div class="botn">
+              <label for="cerrar" id="btn-cerrar" style="font-size: 30px; color: rgb(255, 0, 0); "><i
+                  class="fa-solid fa-circle-xmark"></i></label>
+            </div>
+            <div class="ban">
+              <img th:src="@{/assets/banner.png}" class="imgbanner" alt="">
+            </div>
+          </div>
+        </div>
+        <!----modal-------->
+      </div>
+    </section>
+    <!-------CINTA DE SOCIALES-------->
+    <div class="social">
+      <ul>
+        <li><a href="https://www.facebook.com/kristel.vereau" class="fa-brands fa-facebook" target="blank"></a></li>
+        <li><a href="https://api.whatsapp.com/send/?phone=51917032870&text=Me%20gustaría%20ver%20sus%20productos"
+            class="fa-brands fa-whatsapp" target="blank"></a></li>
+        <li><a href="https://www.tiktok.com/@smartphonesperu" class="fa-brands fa-tiktok" target="blank"></a></li>
+      </ul>
+    </div>
+    <!-------CINTA DE SOCIALES-------->
+  </main>
+  <footer class="bg-dark py-4 mt-auto">
+    <div class="container px-5">
+      <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+        <div class="col-auto">
+          <div class="small m-0 text-white">Copyright &copy; Krica Cell 2023</div>
+        </div>
+        <div class="col-auto">
+          <a class="link-light small" href="#!">Privacidad</a>
+          <span class="text-white mx-1">&middot;</span>
+          <a class="link-light small" href="#!">Términos</a>
+          <span class="text-white mx-1">&middot;</span>
+          <a class="link-light small"
+            href="https://api.whatsapp.com/send/?phone=51917032870&text=Hola%20quiero%20ver%20más%20sus%20productos">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/e294256e81.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>

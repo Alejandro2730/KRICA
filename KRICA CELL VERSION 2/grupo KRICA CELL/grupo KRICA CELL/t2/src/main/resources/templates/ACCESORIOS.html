@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Krica Cell</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/assets/logoJutmay.ico}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+
+
+<body class="d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container px-4">
+            <a class="navbar-brand fw-bolder"><img th:src="@{/assets/LOGO-OFICIAL-JUTMAY.svg}"></img> Krica Cell</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    </nav>
+    <header class="bg-dark py-5">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center justify-content-center">
+                <div class="col-lg-8 col-xl-7 col-xxl-6">
+                    <div class="my-5 text-center text-xl-start">
+                        <h1 class="titulo display-5 fw-bolder text-white mb-2">
+                            <p>ACCESORIOS</p>
+                        </h1>
+                        <p class="lead fw-normal text-white-50 mb-4 d-xl-block">Los teléfonos móviles son una parte
+                            integral de la vida de uno y, a menudo, marcan nuestro estilo. Ahora que los teléfonos
+                            inteligentes se están convirtiendo en una parte importante de nuestras vidas, queremos que
+                            nuestros teléfonos sean elegantes y que den cierta ventaja mediante el uso de accesorios que
+                            permitan un uso eficiente</p>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5"
+                        th:src="@{/assets/ImagenInicialJutmay2.png}" width="380px" alt="..." />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5 mt-auto" style="background-color: rgba(199, 244, 255, 0.897);">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center justify-content-center">
+                <div class="col-lg-8 col-xl-7 col-xxl-6">
+                    <div class="my-5 text-center text-xl-start">
+                        <h2 class="titulo mb-2">
+                            <p>PRODUCTOS</p>
+                        </h2>
+                        <p class="lead fw-normal text-white-50 mb-4 d-xl-block">
+                        <ul class="lead fw-normal mb-4 d-xl-block">
+                            <li>Cable USB para teléfonos móviles. </li>
+                            <li>Cable OTG para celuares. </li>
+                            <li>Fundas tipo folio.</li>
+                            <li>Anillos para celulares.</li>
+                            <li>Aro de luz. </li>
+                            <li>Pop-UP.</li>
+                            <li>Audifonos inalambricos. </li>
+                            <li>Audifonos alambricos. </li>
+                            <li>Soporte de celular.</li>
+                            <li>Cargadores. </li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5"
+                        th:src="@{/assets/especialidadesImg/fon1.png}" width="380px" alt="..." /></div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio-->
+    <section class="content-section" id="portfolio">
+        <div class="container px-4 px-lg-5">
+            <div class="content-section-heading text-center">
+                <br>
+                <h2 class="mb-5">Portafolio</h2>
+            </div>
+            <div class="row gx-0 justify-content-center">
+                <div class="col-md-6 col-lg-5 mx-3">
+                    <a class="portfolio-item" href="#!"> <img class="img-fluid" th:src="@{/assets/especialidadesImg/tele1.jpg}"
+                            alt="..." />
+
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-5 mx-3">
+                    <a class="portfolio-item" href="#!"> <img class="img-fluid" th:src="@{/assets/especialidadesImg/tele2.jpg}"
+                            alt="..." />
+
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-5 mx-3">
+                    <a class="portfolio-item" href="#!"> <img class="img-fluid" th:src="@{/assets/especialidadesImg/tele3.jpg}"
+                            alt="..." />
+
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-5 mx-3">
+                    <a class="portfolio-item" href="#!"> <img class="img-fluid" th:src="@{/assets/especialidadesImg/tele4.jpg}"
+                            alt="..." />
+
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Call to Action-->
+    <section class="content-section bg-primary text-white">
+        <div class="container px-4 px-lg-5 text-center">
+            <h2 class="mb-4">Si tienes dudas sobre nuestros servicios y productos,</h2>
+            <a href="#modal1" class="btn btn-xl btn-light me-4"><i class="fa-sharp fa-solid fa-circle-check"></i>
+                HAGA CLIC AQUÍ</a>
+            <br>
+            <p>
+
+            </p>
+            <h2 class="mb-4">Y tendrás toda la información necesaria</h2>
+        </div>
+    </section>
+    <section id="modal1" class="modalmask">
+        <div class="modalbox movedown">
+            <a href="#close" title="Close" class="close">X</a>
+            <div id="form" class="form">
+                <div class="left-form">
+                    <img th:src="@{/assets/1.png}" width="100%" alt="">
+                </div>
+                <div class="right-form">
+                    <div class="formcontainer">
+                        <form action="https://formsubmit.co/4e3e015640998525e0d90280dd1ec422" method="POST"
+                            class="decor" style="background: #fff;
+                         display: flex;
+                         flex-direction: column;
+                         padding: 6vw 4vw;
+                         justify-items: center;
+                         width: 100%;
+                         height: 900px;">
+                            <div class="form-left-decoration"></div>
+                            <div class="form-right-decoration"></div>
+                            <div class="circle"></div>
+                            <div class="form-inner">
+                                <h2 style="color: blue;">Registre su duda AQUI</h2>
+                                <label class="h5 mb-0"> Ingrese su Nombre y Apellido: </label>
+                                <input type="text" placeholder="Nombre y Apellido" name="name">
+                                <label class="h5 mb-0"> Ingrese su N° de Celular: </label>
+                                <input type="text" placeholder="Celular" name="phone">
+                                <label class="h5 mb-0"> Ingrese su Correo electrónico: </label>
+                                <input type="email" placeholder="Email" name="email">
+                                <label class="h5 mb-0">¿Cómo podemos ayudarte?</label>
+                                <textarea placeholder="Cuéntanos..." rows="5" name="Message"></textarea>
+                                <p>
+
+                                </p>
+                                <button
+                                    class="btn btn-primary btn-lg px-3 me-sm-3 titulo display-5 fw-bolder text-white"
+                                    type="submit">
+                                    <i class="fa-sharp fa-solid fa-file-invoice-dollar"></i> ENVIAR</button>
+                                <input type="hidden" name="_next" value="http://127.0.0.1:5500/ACCESORIOS.html">
+                                <input type="hidden" name="_captcha" value="false">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---------------------->
+    <section class="pt-5" id="landing">
+        <div class="container px-5">
+            <div class="row gx-5">
+                <div class="col-lg-2"></div>
+                <div>
+                    <div class="row gx-5 row-cols-1 row-cols-md-3">
+                        <div class="col mb-5 h-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3 mt-3"><i
+                                    class="bi bi-chat-dots"></i>
+                            </div>
+                            <div class="h5 mb-0">Conversa con nosotros</div>
+                            <p class="text-muted mb-4">Solicite o contáctenos mediante Whatsapp lo que solicite.</p>
+                            <a class="btn btn-primary btn-lg px-3 me-sm-3 titulo display-5 fw-bolder text-white"
+                                href="https://api.whatsapp.com/send/?phone=51917032870&text=Hola%20quiero%20ver%20más%20sus%20productos">
+                                <nav class="fa-brands fa-square-whatsapp"></nav> WhatsApp
+                            </a>
+                        </div>
+                        <div class="col mb-5 h-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3 mt-3"><i
+                                    class="fa-solid fa-envelope-open-text"></i>
+                            </div>
+                            <div class="h5">Contáctenos</div>
+                            <p class="text-muted mb-0">Ingrese sus datos en el formulario para una atención
+                                personalizada.
+                            </p>
+                            <a class="btn btn-primary btn-lg px-3 me-sm-3 titulo display-5 fw-bolder text-white mt-3"
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSfjnkQXHks6IJmygJWgcIfYv9PcTuUN9OeNkGKYEQjTNiko7Q/viewform?usp=sf_link">
+                                <nav class="fa-solid fa-file-pen"></nav> Contáctenos
+                            </a>
+                        </div>
+                        <div class="col mb-5 mb-md-0 h-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3 mt-3"><i
+                                    class="bi bi-telephone"></i>
+                            </div>
+                            <div class="h5">Llámenos</div>
+                            <p class="text-muted mb-0">Llámenos para consultas al siguiente número: <br>+51 917032870
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    </main>
+    <footer class="bg-dark py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">Copyright &copy; Krica Cell 2023</div>
+                </div>
+                <div class="col-auto">
+                    <a class="link-light small" href="#!">Privacidad</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Términos</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small"
+                        href="https://api.whatsapp.com/send/?phone=51917032870&text=Hola%20quiero%20ver%20más%20sus%20productos">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/e294256e81.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>
