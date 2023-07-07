@@ -27,12 +27,13 @@ public class InicioControl {
     public String catalogo() {
         return "CATALOGO.html";
     }
-    @RequestMapping("/login")
+    @RequestMapping("/autenticacion")
     public String login() {
-        return "login.html";
+        return "logueo.html";
     }
-    @RequestMapping("/dashboard")
+    @RequestMapping("/dashboard/")
     public String dashboard() {
         return "dashboard.html";
     }
+
 }
