@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.proyecto.t2.model.entidad.Producto;
+import com.proyecto.t2.model.service.ICategoriaService;
 import com.proyecto.t2.model.service.IMarcaService;
 import com.proyecto.t2.model.service.IProductoService;
 
@@ -22,12 +23,16 @@ public class ProductoController {
     @Autowired
     private IMarcaService marcaService;
 
+    @Autowired
+    private ICategoriaService categoriaService;
+
     @RequestMapping("/")
     public String inicio(Model model){
         Producto producto = new Producto();
         model.addAttribute("producto", producto);
         model.addAttribute("listarmarcas", marcaService.mostrarMarcasOrdenAsc());
         model.addAttribute("listarproducto", productoService.listarProductos());
+        model.addAttribute("listarcategorias", categoriaService.mostrarCategoriaOrdenAsc()); 
         return "productos/index";
     }
 
