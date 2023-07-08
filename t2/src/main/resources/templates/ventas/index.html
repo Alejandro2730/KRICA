@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head th:replace="layouts/plantilla :: cabecera"></head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+<link rel="stylesheet" th:href="nuevos-estilos.css">
+
+<body>
+    <div class="page-wrapper">
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar2" th:replace="layouts/plantilla :: barraIzquierda"></aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container2">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop2" th:replace="layouts/plantilla :: cabeceraOpciones"></header>
+            <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none"
+                th:replace="layouts/plantilla :: barraDerecha"></aside>
+            <!-- END HEADER DESKTOP-->
+            <!-- BREADCRUMB-->
+            <section class="au-breadcrumb m-t-75">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="au-breadcrumb-content">
+                                    <div class="au-breadcrumb-left">
+                                        <span class="au-breadcrumb-span">Estas aqui:</span>
+                                        <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                            <li class="list-inline-item active">
+                                                Tablas
+                                            </li>
+                                            <li class="list-inline-item seprate">
+                                                <span>/</span>
+                                            </li>
+                                            <li class="list-inline-item">Ventas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END BREADCRUMB-->
+            <!-- STATISTIC-->
+            <!-- END STATISTIC-->
+            <section>
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-8">
+                                <!-- RECENT REPORT 2-->
+                                <div class="card mt-4">
+                                    <div class="card-header">
+                                        <strong>Registrar Venta</strong>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <form th:action="@{/ventas/form}" th:object="${venta}" method="post"
+                                            class="form-horizontal">
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class="form-control-label">Cliente:</label>
+                                                </div>
+                                                <div class="col-12 col-md-5">
+                                                    <select class="form-select custom-select" th:field="*{cliente.id}">
+                                                        <option value="">Seleccione una opcion:</option>
+                                                        <option th:each="item: ${listaClientes}" th:value="${item.id}"
+                                                            th:text="${item.nombre}"></option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class="form-control-label">Trabajador:</label>
+                                                </div>
+                                                <div class="col-12 col-md-5">
+                                                    <select class="form-select custom-select" th:field="*{trabajador.id}">
+                                                        <option value="">Seleccione una opcion:</option>
+                                                        <option th:each="item: ${listaTrabajadores}" th:value="${item.id}"
+                                                            th:text="${item.nombre}"></option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class="form-control-label">Producto:</label>
+                                                </div>
+                                                <div class="col-12 col-md-5">
+                                                    <select class="form-select custom-select" th:field="*{producto.id}" onchange="updatePrecio(this)">
+                                                        <option value="">Seleccione una opcion:</option>
+                                                        <option th:each="item: ${listaProductos}" th:value="${item.id}"
+                                                            th:text="${item.nombre}"></option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class="form-control-label">Cantidad:</label>
+                                                </div>
+                                                <div class="col-12 col-md-5">
+                                                    <input th:field="*{cantidad}" type="text"
+                                                        placeholder="Ingrese la cantidad del producto" class="form-control">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-12 text-center">
+                                                <button type="submit" class="btn btn-success btn-sm">
+                                                    <i class="fa fa-dot-circle-o"></i> Registrar
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-sm"
+                                                    onclick="limpiarFormVenta();">
+                                                    <i class="fa fa-ban"></i> Limpiar
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- END RECENT REPORT 2-->
+                            </div>
+                            <div class="col-xl-4">
+                                <!-- TASK PROGRESS-->
+                                <!-- END TASK PROGRESS-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <!-- USER DATA-->
+                                <div class="table-responsive table-responsive-data2">
+                                    <table class="table table-data2">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Trabajador</th>
+                                                <th>Cliente</th>
+                                                <th>Producto</th>
+                                                <th>Cantidad</th>
+                                                <th>Importe</th>
+                                                <th>Fecha</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="item: ${listaVentas}" class="tr-shadow">
+                                                <td th:text="${item.id}"></td>
+                                                <td th:text="${item.trabajador.nombre}"></td>
+                                                <td th:text="${item.cliente.nombre}"></td>
+                                                <td th:text="${item.producto.nombre}"></td>
+                                                <td th:text="${item.cantidad}"></td>
+                                                <td th:text="${item.importe}"></td>
+                                                <td th:text="${#dates.format(item.fecha_registro, 'yyyy-MM-dd')}"></td>                                                <td>
+                                                   
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END USER DATA-->
+                            </div>
+                            <div class="col-xl-6">
+                                <!-- MAP DATA-->
+                                <!-- END MAP DATA-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section th:replace="layouts/plantilla :: footer"></section>
+            <!-- END PAGE CONTAINER-->
+        </div>
+    </div>
+
+    <!-- Modal -->
+    
+    <div th:replace="layouts/plantilla :: librerias"></div>
+    <script th:src="@{/js/libreriaMarca.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+</body>
+
+</html>
+<!-- end document-->
