@@ -40,27 +40,35 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar2" th:fragment="barraIzquierda">
             <div class="logo">
-                <a th:href="@{/dashboard}">
+                <a th:href="@{/dashboard/}">
                     <img th:src="@{/images/icon/logo-white.png}" alt="" />
                 </a>
             </div>
             <div class="menu-sidebar2__content js-scrollbar1">
-                <div class="account2">
+                <div class="account2 text-center">
                     <div class="image img-cir img-120">
                         <img th:src="@{/images/icon/avatar-big-01.jpg}" alt="John Doe" />
                     </div>
-                    <h4 class="name">carlos</h4>
-                    <a th:href="@{/login}">Desconectarse</a>
+                    <h4 class="name">
+                        <span sec:authentication="name"></span>
+                        <span sec:authentication="principal.authorities"></span>
+                    </h4>
+                    <!--<a th:href="@{/login}">Desconectarse</a>-->
+                    <form th:action="@{/logout}" method="post">
+                        <button class="dropdown-item" type="submit">
+                            Desconectarse
+                        </button>
+                    </form>
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
 
                         <li>
-                            <a href="#">
-                                <i class="fas fa-chart-bar"></i>Estadisticas</a>
+                            <a th:href="@{/ordenes/}">
+                                <i class="fas fa-chart-bar"></i>Orden Servicio</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a th:href="@{/ventas/}">
                                 <i class="fas fa-shopping-basket"></i>Ventas</a>
                         </li>
                         <li class="has-sub">
@@ -76,8 +84,16 @@
                                         <i class="fas fa-user-circle"></i>Clientes</a>
                                 </li>
                                 <li>
+                                    <a th:href="@{/trabajadores/}">
+                                        <i class="fa fa-building"></i></i>Trabajadores</a>
+                                </li>
+                                <li>
                                     <a th:href="@{/marcas/}">
                                         <i class="fas fa-copyright"></i>Marcas</a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/categorias/}">
+                                        <i class="fas fa-location-arrow"></i></i>Categorias</a>
                                 </li>
                                 <li>
                                     <a th:href="@{/tipos/}">
@@ -89,7 +105,7 @@
                                 </li>
                                 <li>
                                     <a th:href="@{/productos/}">
-                                        <i class="fa-brands fa-shopify" aria-hidden="true"></i>Productos</a>
+                                        <i class="fab fa-product-hunt"></i>Productos</a>
                                 </li>
                             </ul>
                         </li>
@@ -166,17 +182,24 @@
                         <div class="image img-cir img-120">
                             <img th:src="@{/images/icon/avatar-big-01.jpg}" alt="John Doe" />
                         </div>
-                        <h4 class="name">carlos</h4>
-                        <a th:href="@{/login}">Desconectarse</a>
+                        <h4 class="name">
+                            <span sec:authentication="name"></span>
+                            <span sec:authentication="principal.authorities"></span>
+                        </h4>
+                        <form th:action="@{/logout}" method="post">
+                            <button class="dropdown-item" type="submit">
+                                Desconectarse
+                            </button>
+                        </form>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
                             <li>
-                                <a href="#">
-                                    <i class="fas fa-chart-bar"></i>Estadisticas</a>
+                                <a th:href="@{/ordenes/}">
+                                    <i class="fas fa-chart-bar"></i>Orden servicio</a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a th:href="@{/ventas/}">
                                     <i class="fas fa-shopping-basket"></i>Ventas</a>
                             </li>
                             <li class="has-sub">
@@ -192,8 +215,16 @@
                                             <i class="fas fa-user-circle"></i>Clientes</a>
                                     </li>
                                     <li>
+                                        <a th:href="@{/trabajadores/}">
+                                            <i class="fa fa-building"></i></i>Trabajadores</a>
+                                    </li>
+                                    <li>
                                         <a th:href="@{/marcas/}">
                                             <i class="fas fa-copyright"></i>Marcas</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/categorias/}">
+                                            <i class="fas fa-location-arrow"></i></i>Categorias</a>
                                     </li>
                                     <li>
                                         <a th:href="@{/tipos/}">
@@ -202,6 +233,10 @@
                                     <li>
                                         <a th:href="@{/servicios/}">
                                             <i class="fa fa-bell" aria-hidden="true"></i>Servicios</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/productos/}">
+                                            <i class="fab fa-product-hunt"></i>Productos</a>
                                     </li>
                                 </ul>
                             </li>
