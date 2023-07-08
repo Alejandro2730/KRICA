@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Krica Cell</title>
+  <link rel="icon" type="image/x-icon" th:href="@{assets/logoJutmay.ico}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <link th:href="@{/css/login.css}" rel="stylesheet" />
+</head>
+
+<body>
+  <section class="page222">
+    <div class="container">
+      <div class="left">
+        <div class="login">Login</div>
+        <div class="eula">Bienvenido a Krica Cell, <br> inicie sesión</div>
+      </div>
+      <div class="right">
+        
+        <form class="form" th:action="@{/autenticacion}" method="post">
+          <label for="email">Usuario</label>
+          <input type="text" id="username" name="username">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password">
+          <div class="link-button">
+            <input type="submit" id="submit" value="            ENVIAR">
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+  <script th:src="@{/js/login.js}"></script>
+
+</body>
+
+</html>
