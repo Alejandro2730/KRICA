@@ -1,6 +1,7 @@
 package com.proyecto.t2.model.entidad;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,12 +10,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
-@Entity
-@Table(name = "producto")
+@Entity 
+@Table(name = "productos")
 public class Producto implements Serializable{
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "pro_id")
@@ -30,12 +34,30 @@ public class Producto implements Serializable{
     private float precio;
 
     @ManyToOne
-    @JoinColumn(name = "marca_id")
+    @JoinColumn(name = "mar_id")
     Marca marca;
 
-    /*@ManyToOne
-    @JoinColumn(name = "categoria_id")
-    Categoria categoria;*/
+    @ManyToOne
+    @JoinColumn(name = "cat_id")
+    Categoria categoria;
+
+      @Column(name = "pro_fecha_registro")
+        @Temporal(TemporalType.TIMESTAMP)
+    private Date fecha_registro;
+
+        @PrePersist
+        @PreUpdate
+    public void asignarFecha(){
+        fecha_registro = new Date();
+    }
+
+    public Date getFecha_registro() {
+            return fecha_registro;
+        }
+
+        public void setFecha_registro(Date fecha_registro) {
+            this.fecha_registro = fecha_registro;
+        }
 
     public Long getId() {
         return id;
@@ -67,5 +89,13 @@ public class Producto implements Serializable{
     public void setMarca(Marca marca) {
         this.marca = marca;
     }
+    public Categoria getCategoria() {
+        return categoria;
+    }
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    
     
 }
