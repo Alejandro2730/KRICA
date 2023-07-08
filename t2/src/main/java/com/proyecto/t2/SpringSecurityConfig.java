@@ -41,21 +41,5 @@ public class SpringSecurityConfig {
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() throws Exception{
         return (web)->web.ignoring().requestMatchers("/assets/**","/css/**","/js/**","/images/**","/img/**","/fonts/**","/vendor/**","D:\\grupo KRICA CELL\\grupo KRICA CELL\\t2\\src\\main\\resources\\static\\css\\login.css");
-    }
-/*
-    @Bean
-    public InMemoryUserDetailsManager configureAuthentication(){
-        List<UserDetails> listaUsuarios = new ArrayList<>();
-        List<GrantedAuthority> rolesAdministradores = new ArrayList<>();
-        List<GrantedAuthority> rolesUsuarios = new ArrayList<>();
-
-        rolesAdministradores.add(new SimpleGrantedAuthority("ADMIN"));
-        rolesUsuarios.add(new SimpleGrantedAuthority("USER"));
-
-        listaUsuarios.add(new User("Administrador", "{noop}123456", rolesAdministradores));
-        listaUsuarios.add(new User("Jorge", "{noop}123456", rolesUsuarios));
-
-        return new InMemoryUserDetailsManager(listaUsuarios);
-    }*/
-    
+    } 
 }
